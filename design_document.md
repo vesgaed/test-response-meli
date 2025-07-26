@@ -1,7 +1,7 @@
 # Documento de Diseño
 
 **Proyecto:** Prototipo de Página de Producto - Desafío Técnico
-**Autor:**Edwin Fabian Vesga Escobar
+**Autor:** Edwin Fabian Vesga Escobar
 
 ## 1. Arquitectura y Decisiones de Diseño
 

@@ -5,6 +5,7 @@ Esta guía explica cómo levantar la aplicación completa (backend y frontend) u
 ## ✅ Prerrequisitos
 
 * Tener instalado **Docker Desktop** (para Windows, Mac) o Docker Engine y Docker Compose (para Linux).
+* Tener instalado Python 3.9+ en tu sistema (para ejecutar las pruebas localmente).
 
 ## 🚀 Instrucciones de Ejecución
 
@@ -39,22 +40,30 @@ docker-compose down
 
 ## ⚙️ Pruebas y Calidad del Código (Backend)
 
-Para validar el correcto funcionamiento y la calidad del código del servicio backend, sigue estos pasos desde una nueva terminal.
+Para validar el correcto funcionamiento del servicio backend, puedes ejecutar la suite de pruebas localmente. Se recomienda encarecidamente usar un entorno virtual para aislar las dependencias del proyecto.
 
-### 1. Ejecutar la Suite de Pruebas
+### 1. Preparar Entorno y Ejecutar Pruebas
 
 Este comando correrá todas las pruebas unitarias y de integración definidas para la API.
 
 ```bash
 # 1. Navega al directorio del backend
 cd backend/
-```
-# 2. Activa el entorno de Conda
-```bash
-conda activate meli_be
-```
-# 3. Ejecuta Pytest
-```bash
+
+# 2. Crea un entorno virtual (solo necesitas hacerlo una vez)
+python -m venv venv
+
+# 3. Activa el entorno virtual
+#    En Windows:
+#    venv\Scripts\activate
+#
+#    En macOS/Linux:
+#    source venv/bin/activate
+
+# 4. Instala las dependencias del proyecto
+pip install -r requirements.txt
+
+# 5. Ejecuta la suite de pruebas con Pytest
 pytest
 ```
 
