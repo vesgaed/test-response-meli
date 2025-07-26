@@ -35,3 +35,41 @@ Una vez que los contenedores estén corriendo, puedes acceder a:
 Para detener y eliminar los contenedores, presiona `Ctrl + C` en la terminal donde se está ejecutando `docker-compose`, y luego ejecuta:
 ```bash
 docker-compose down
+```
+
+## ⚙️ Pruebas y Calidad del Código (Backend)
+
+Para validar el correcto funcionamiento y la calidad del código del servicio backend, sigue estos pasos desde una nueva terminal.
+
+### 1. Ejecutar la Suite de Pruebas
+
+Este comando correrá todas las pruebas unitarias y de integración definidas para la API.
+
+```bash
+# 1. Navega al directorio del backend
+cd backend/
+```
+# 2. Activa el entorno de Conda
+```bash
+conda activate meli_be
+```
+# 3. Ejecuta Pytest
+```bash
+pytest
+```
+
+Deberías ver una salida que indica que todas las pruebas se ejecutaron exitosamente.
+
+### 2. Validar Cobertura de Código
+
+Este comando no solo ejecuta las pruebas, sino que también genera un reporte que muestra qué porcentaje de tu código está cubierto por ellas.
+```bash
+pytest --cov=app
+```
+
+Para un análisis más detallado, puedes generar un reporte HTML interactivo:
+```bash
+pytest --cov=app --cov-report=html
+```
+
+Luego, abre el archivo htmlcov/index.html en tu navegador para ver el desglose completo.

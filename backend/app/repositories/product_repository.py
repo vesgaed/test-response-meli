@@ -6,13 +6,14 @@ from app.services import recommender
 
 class ProductRepository:
     """
-    Handles data operations by reading from JSON files.
-    This layer abstracts the data source from the rest of the application.
+    Repository class responsible for managing product-related data operations.
+    Loads data from JSON files and provides methods for querying, enriching, and summarizing product information.
+    Abstracts the data source from the rest of the application for maintainability and testability.
     """
     def __init__(self, data_path: Path = Path("app/data")):
         """
-        Initializes the repository by loading all data files into memory.
-        Using pandas DataFrames for efficient in-memory data manipulation.
+        Loads all required data files into memory as pandas DataFrames for efficient access.
+        Raises RuntimeError if any data file is missing.
         """
         self.data_path = data_path
         try:
@@ -25,53 +26,46 @@ class ProductRepository:
             raise RuntimeError(f"Data file not found: {e}. Ensure all JSON files are in {data_path}")
 
     def get_all_products_for_recommendation(self) -> pd.DataFrame:
-        """Returns a simplified DataFrame of all products for the ML model."""
+        """
+        Returns a copy of the products DataFrame for use in recommendation algorithms.
+        """
         return self.products_df.copy()
 
     def find_product_details_by_id(self, item_id: str) -> Optional[Dict[str, Any]]:
         """
-        Finds a product by its ID and enriches it with related data.
-        This method simulates a database JOIN operation by combining data
-        from multiple pandas DataFrames.
+        Retrieves detailed information for a product by its ID, including related category, seller, reviews, payment methods, specifications, and recommended products.
+        Returns None if the product is not found.
         """
-        # --- Lógica Corregida ---
-        # 1. Filtra el DataFrame para encontrar el producto.
+        # Filter the DataFrame to find the product by ID
         product_df_filtered = self.products_df[self.products_df['id'] == item_id]
-        
-        # 2. VERIFICA si el DataFrame resultante está vacío ANTES de acceder a cualquier fila.
-        if product_df_filtered.empty:
-            # Si no se encontró el producto, retorna None inmediatamente.
-            # La API convertirá esto en un 404 Not Found.
-            return None
-        
-        # 3. Solo si el producto fue encontrado, obtén la primera (y única) fila.
-        product_series = product_df_filtered.iloc[0]
-        # -------------------------
 
-        # --- Data Enrichment (esta parte no cambia) ---
-        
-        # Get Category
+        # Return None if the product does not exist
+        if product_df_filtered.empty:
+            return None
+
+        # Extract the product data as a Series
+        product_series = product_df_filtered.iloc[0]
+
+        # Enrich product data with related information
         category = self.categories_df.loc[product_series['category_id']].to_dict()
         category['id'] = product_series['category_id']
 
-        # Get Seller
         seller = self.sellers_df.loc[product_series['seller_id']].to_dict()
         seller['id'] = product_series['seller_id']
 
-        # Get Reviews and calculate average rating
         product_reviews = self.reviews_df[self.reviews_df['product_id'] == item_id]
         average_rating = product_reviews['rating'].mean() if not product_reviews.empty else 0.0
-        
-        # Get Accepted Payment Methods
+
         payment_method_ids = product_series['accepted_payment_method_ids']
         accepted_payments = self.payment_methods_df.loc[payment_method_ids].reset_index().to_dict('records')
-        
+
+        # Generate recommended product IDs using the recommender service
         all_products_df = self.get_all_products_for_recommendation()
         product_category_id = product_series['category_id']
         recommended_ids = recommender.generate_recommendations(item_id, product_category_id, all_products_df)
-        
         related_products = self.find_products_by_ids(recommended_ids)
-        # Assemble the final response dictionary
+
+        # Assemble the final product details dictionary
         product_details = {
             "id": product_series['id'],
             "title": product_series['title'],
@@ -87,11 +81,14 @@ class ProductRepository:
             "specifications": product_series['specifications'],
             "related_products": related_products
         }
-        
+
         return product_details
 
     def find_products_by_ids(self, item_ids: List[str]) -> List[Dict[str, Any]]:
-        """Finds multiple products and returns them in a summary format."""
+        """
+        Retrieves summary information for multiple products by their IDs.
+        Returns a list of product summaries including average rating and main image.
+        """
         
         products_subset = self.products_df[self.products_df['id'].isin(item_ids)]
 
@@ -111,17 +108,17 @@ class ProductRepository:
     
     def find_all_products(self, category: Optional[str] = None, brand: Optional[str] = None) -> List[Dict[str, Any]]:
         """
-        Finds all products, with optional filtering by category name and brand.
-        Returns a summary list for the main page.
+        Retrieves all products, with optional filtering by category name and brand.
+        Returns a list of product summaries for display on the main page.
         """
-        # Inicia con una copia de todos los productos.
+        # Start with a copy of all products
         filtered_df = self.products_df.copy()
 
-        # Asegúrate de que la columna 'brand' exista antes de filtrar
+        # Filter by brand if specified and the column exists
         if brand and 'brand' in filtered_df.columns:
             filtered_df = filtered_df[filtered_df['brand'] == brand]
 
-        # Si se necesita filtrar por categoría, ahora sí hacemos el merge.
+        # Filter by category if specified
         if category:
             categories_for_merge = self.categories_df.reset_index()
             merged_df = pd.merge(
@@ -131,14 +128,13 @@ class ProductRepository:
                 right_on='id',
                 suffixes=('', '_cat')
             )
-            # Aplicamos el filtro de categoría sobre la tabla unida.
             filtered_df = merged_df[merged_df['name'] == category]
 
-        # Si no hay resultados después de filtrar, devuelve una lista vacía.
+        # Return an empty list if no products match the filters
         if filtered_df.empty:
             return []
-            
-        # El resto de la función para crear el resumen
+
+        # Create summary for each product
         def create_summary(row):
             product_reviews = self.reviews_df[self.reviews_df['product_id'] == row['id']]
             average_rating = product_reviews['rating'].mean() if not product_reviews.empty else 0.0
@@ -149,5 +145,5 @@ class ProductRepository:
                 "image": row['images'][0] if row['images'] else "",
                 "average_rating": round(average_rating, 2)
             }
-            
+
         return list(filtered_df.apply(create_summary, axis=1))

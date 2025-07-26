@@ -7,9 +7,11 @@ from slowapi.errors import RateLimitExceeded
 from .dependencies import limiter
 from .api.endpoints import products
 
+from .core.config import settings
+
 # --- App Initialization ---
 app = FastAPI(
-    title="Mercado Libre Challenge API",
+    title=settings.APP_NAME,
     description="API to support the item detail page, including AI-powered recommendations.",
     version="1.0.0"
 )
@@ -32,7 +34,7 @@ app.mount("/images", StaticFiles(directory="public/images"), name="images")
 
 # --- API Router Inclusion ---
 # Includes all endpoints defined in the products router
-app.include_router(products.router, prefix="/api/v1", tags=["Products"])
+app.include_router(products.router, prefix=settings.API_V1_STR, tags=["Products"])
 
 # --- Root Endpoint ---
 @app.get("/", tags=["Root"])

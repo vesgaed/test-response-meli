@@ -1,6 +1,7 @@
-# Documento de Diseño y Arquitectura
+# Documento de Diseño
 
 **Proyecto:** Prototipo de Página de Producto - Desafío Técnico
+**Autor:**Edwin Fabian Vesga Escobar
 
 ## 1. Arquitectura y Decisiones de Diseño
 
@@ -26,7 +27,6 @@ La solución se diseñó bajo un patrón de microservicios, utilizando una arqui
 
 * **Tecnología (FastAPI + Jinja2):** Dado el enfoque del rol en el backend, se tomó la decisión pragmática de construir el frontend utilizando herramientas del ecosistema Python. Este enfoque de **renderizado en el servidor (SSR)** es ligero, rápido y demuestra la capacidad de entregar un producto funcional de extremo a extremo sin depender de frameworks complejos de JavaScript, lo cual es ideal para prototipos y aplicaciones donde la lógica de la interfaz no es excesivamente compleja.
 
----
 
 ## 2. Desafíos Técnicos y Soluciones
 
@@ -42,8 +42,3 @@ La solución se diseñó bajo un patrón de microservicios, utilizando una arqui
     1.  **Filtrado por Categoría:** El primer paso y el más importante es filtrar y considerar únicamente los productos que pertenecen a la **misma categoría** que el producto actual.
     2.  **Cálculo de Similitud de Contenido:** Una vez dentro de la categoría correcta, se aplica un modelo de **TF-IDF y Similitud de Coseno** sobre las características textuales (`title`, `description`) para encontrar los productos más similares dentro de ese subconjunto relevante.
     Esta solución garantizó que las recomendaciones fueran siempre contextualmente apropiadas, mejorando drásticamente la calidad y la experiencia de usuario.
-
-### 2.3. Desafío: Calidad y Rendimiento del Código en Pruebas
-
-* **Problema:** Durante el desarrollo de la suite de pruebas automatizadas, se identificó un cuello de botella severo: el tiempo de ejecución de las pruebas era superior a un minuto. El análisis reveló que la capa de datos (el repositorio) se instanciaba y leía todos los archivos JSON del disco en cada llamada de prueba.
-* **Solución Implementada:** Se utilizó el mecanismo `dependency_overrides` de FastAPI, una herramienta avanzada para el testing. Se configuró la suite de pruebas para crear una **única instancia del repositorio** al inicio, que luego es reutilizada (inyectada) en todos los casos de prueba. Esta optimización "cacheando" la dependencia eliminó el acceso repetitivo al disco y redujo el tiempo de ejecución de las pruebas a **menos de 3 segundos**, permitiendo un ciclo de desarrollo ágil y eficiente.
