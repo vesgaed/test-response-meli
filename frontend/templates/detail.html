@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.title if product else 'Producto no encontrado' }}</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">Meli Challenge</div>
+    </header>
+    <div class="container">
+        <a href="/" class="back-link">&lt; Volver al listado</a>
+        {% if product %}
+            <div class="detail-container">
+                <div class="detail-images">
+                    <div class="main-image-container">
+                         <img src="http://localhost:8000{{ product.images[0] }}" alt="Imagen de {{ product.title }}">
+                    </div>
+                </div>
+                <div class="detail-info">
+                    <h1>{{ product.title }}</h1>
+                    <p class="rating">Calificación: <strong>{{ "%.1f"|format(product.average_rating) }} / 5.0</strong></p>
+                    <p>Vendido por: <strong>{{ product.seller.name }}</strong> (Reputación: {{ product.seller.reputation.level }})</p>
+                    <div class="price">$ {{ product.price.amount | round | int }}</div>
+                    <p class="stock">¡Últimas {{ product.stock }} unidades disponibles!</p>
+                    <button>Comprar ahora</button>
+                    
+                    <div class="payment-methods">
+                        <h4>Métodos de pago</h4>
+                        <ul>
+                            {% for method in product.accepted_payment_methods %}
+                                <li>{{ method.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    </div>
+
+                <div class="description">
+                    <h2>Descripción</h2>
+                    <p>{{ product.description | default('El vendedor no incluyó una descripción.', true) }}</p>
+                </div>
+
+                 <div class="specs">
+                    <h2>Características del producto</h2>
+                     <table>
+                         {% for key, value in product.specifications.items() %}
+                            {% if value is not none and value != '' %}
+                                 <tr>
+                                     <td class="spec-key"><strong>{{ key.replace('_', ' ') | title }}</strong></td>
+                                     <td>{{ value }}</td>
+                                 </tr>
+                            {% endif %}
+                         {% endfor %}
+                     </table>
+                </div>
+                
+                <div class="reviews">
+                    <h2>Opiniones sobre el producto</h2>
+                    {% for review in product.reviews %}
+                        <div class="review-card">
+                            <p><strong>Calificación: {{ review.rating }}/5</strong> por {{ review.author }}</p>
+                            <p>"{{ review.comment }}"</p>
+                        </div>
+                    {% else %}
+                        <p>Este producto aún no tiene opiniones.</p>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="related-products">
+                <h2>Quienes vieron este producto también compraron</h2>
+                <div class="grid">
+                    {% for related in product.related_products %}
+                    <a href="/item/{{ related.id }}">
+                        <div class="card">
+                            <div class="image-container">
+                                <img src="http://localhost:8000{{ related.image }}" alt="{{ related.title }}">
+                            </div>
+                            <div class="card-content">
+                                <p class="card-price">$ {{ related.price.amount | round | int }}</p>
+                                <p class="card-title">{{ related.title }}</p>
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+
+        {% else %}
+            <h1>Producto no encontrado</h1>
+            <a href="/">Volver a la página principal</a>
+        {% endif %}
+    </div>
+</body>
+</html>

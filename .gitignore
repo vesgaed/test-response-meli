@@ -1,0 +1,44 @@
+# Archivos de Sistema Operativo y Editores
+.DS_Store
+Thumbs.db
+*.swo
+*.swp
+.vscode/
+.idea/
+
+# === Backend (Python) ===
+
+# Directorios de entorno virtual
+/venv
+/env
+.venv
+
+# Cache de Python
+__pycache__/
+*.py[cod]
+
+# Cache y reportes de Pytest
+.pytest_cache/
+.coverage
+
+# === Frontend (Node.js / React / Vite) ===
+
+# Directorio de dependencias (MUY IMPORTANTE)
+frontend/node_modules/
+
+# Archivos de log
+frontend/npm-debug.log*
+frontend/yarn-error.log*
+frontend/yarn.lock
+
+# Directorio de build de producción
+frontend/dist/
+frontend/.next/
+frontend/build/
+
+# Archivos de entorno local (contienen secretos)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

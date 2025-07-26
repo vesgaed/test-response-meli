@@ -1,0 +1,6 @@
+[
+  { "id": 1, "name": "Tarjeta de Crédito" },
+  { "id": 2, "name": "Tarjeta de Débito" },
+  { "id": 3, "name": "PSE" },
+  { "id": 10, "name": "Mercado Pago" }
+]

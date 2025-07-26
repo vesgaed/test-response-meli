@@ -1,0 +1,21 @@
+[
+  {"id": "REV001", "product_id": "SMA001", "author": "Luisa F.", "rating": 5, "comment": "El mejor iPhone hasta la fecha. La cámara es espectacular."},
+  {"id": "REV002", "product_id": "SMA001", "author": "Carlos G.", "rating": 4, "comment": "Muy rápido, pero la batería esperaba que durara más."},
+  {"id": "REV003", "product_id": "SMA002", "author": "Ana P.", "rating": 5, "comment": "Samsung se lució con este teléfono. El zoom es increíble."},
+  {"id": "REV004", "product_id": "SMA002", "author": "Ricardo M.", "rating": 5, "comment": "Simplemente perfecto. Vale cada centavo."},
+  {"id": "REV005", "product_id": "SMA003", "author": "Sofia V.", "rating": 4, "comment": "Excelente relación calidad-precio. Muy recomendado."},
+  {"id": "REV006", "product_id": "MUE001", "author": "David R.", "rating": 5, "comment": "El escritorio es muy firme y las luces LED le dan un toque genial."},
+  {"id": "REV007", "product_id": "MUE001", "author": "Maria C.", "rating": 3, "comment": "Es bonito pero el armado fue muy complicado. Las instrucciones no son claras."},
+  {"id": "REV008", "product_id": "MUE002", "author": "Jorge L.", "rating": 4, "comment": "Cumple su función, es espacioso. Buen producto por el precio."},
+  {"id": "REV009", "product_id": "MUE006", "author": "Sandra B.", "rating": 2, "comment": "El vendedor tardó mucho en despachar y la silla no es tan cómoda como parece."},
+  {"id": "REV010", "product_id": "MUE006", "author": "Laura Z.", "rating": 1, "comment": "No lo recomiendo. Llegó con un defecto y el vendedor no responde."},
+  {"id": "REV011", "product_id": "PAP001", "author": "Estudiante_01", "rating": 5, "comment": "Los cuadernos de siempre, buena calidad."},
+  {"id": "REV012", "product_id": "PAP002", "author": "Oficina Feliz", "rating": 5, "comment": "Papel muy blanco, nunca se atasca en la impresora."},
+  {"id": "REV013", "product_id": "PAP003", "author": "Juan Valdes", "rating": 3, "comment": "Escriben bien, pero a veces la tinta se corta."},
+  {"id": "REV014", "product_id": "SMA004", "author": "Camila S.", "rating": 5, "comment": "Me encanta el color. Funciona perfecto y es más económico que el 15."},
+  {"id": "REV015", "product_id": "MUE004", "author": "Familia Martinez", "rating": 4, "comment": "Muy grande y espacioso, justo lo que necesitábamos."},
+  {"id": "REV016", "product_id": "SMA002", "author": "TechReviewer", "rating": 5, "comment": "La mejor pantalla del mercado, sin duda. La IA es muy útil."},
+  {"id": "REV017", "product_id": "PAP005", "author": "Mamá Artista", "rating": 5, "comment": "Los colores pintan muy bien, a mi hijo le encantaron."},
+  {"id": "REV018", "product_id": "SMA001", "author": "Andres B.", "rating": 5, "comment": "La fluidez de iOS es incomparable. Una excelente compra."},
+  {"id": "REV019", "product_id": "MUE006", "author": "Carlos V.", "rating": 3, "comment": "Regular. Por el precio está bien, pero no es para estar sentado todo el día."}
+]

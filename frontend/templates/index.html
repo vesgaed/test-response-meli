@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Meli Challenge</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">Meli Challenge</div>
+    </header>
+    <div class="container">
+        <div class="filters">
+            <form method="GET" action="/">
+                <label for="category">Categoría:</label>
+                <select name="category" id="category" onchange="this.form.submit()">
+                    <option value="">Todas</option>
+                    {% for cat in categories %}
+                        <option value="{{ cat }}" {% if cat == selected_category %}selected{% endif %}>{{ cat }}</option>
+                    {% endfor %}
+                </select>
+                <label for="brand">Marca:</label>
+                <select name="brand" id="brand" onchange="this.form.submit()">
+                    <option value="">Todas</option>
+                    {% for b in brands %}
+                        <option value="{{ b }}" {% if b == selected_brand %}selected{% endif %}>{{ b }}</option>
+                    {% endfor %}
+                </select>
+            </form>
+        </div>
+        <div class="grid">
+            {% for product in products %}
+            <a href="/item/{{ product.id }}">
+                <div class="card">
+                    <div class="image-container">
+                        <img src="http://localhost:8000{{ product.image }}" alt="{{ product.title }}">
+                    </div>
+                    <div class="card-content">
+                        <p class="card-price">$ {{ product.price.amount }}</p>
+                        <p class="card-title">{{ product.title }}</p>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

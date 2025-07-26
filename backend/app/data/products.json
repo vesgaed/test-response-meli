@@ -1,0 +1,142 @@
+[
+  {
+    "id": "SMA001", "title": "Apple iPhone 15 Pro Max (256 GB) - Titanio Natural", "category_id": 1, "seller_id": "TApple", "brand": "Apple",
+    "description": "Forjado en titanio y equipado con el revolucionario chip A17 Pro, una Botón de Acción personalizable y el sistema de cámaras más potente en un iPhone.",
+    "price": { "amount": 5999900, "currency": "COP" }, "stock": 30, "sku": "APL-15PM-256-NAT",
+    "accepted_payment_method_ids": [1, 2, 3, 10], "images": ["/images/products/SMA001/1.jpg"],
+    "specifications": { "model": "iPhone 15 Pro Max", "color": "Titanio Natural", "ram": "8 GB", "storage": "256 GB", "screen_size": 6.7, "main_camera_resolution": "48 MP", "operating_system": "iOS" }
+  },
+  {
+    "id": "SMA002", "title": "Samsung Galaxy S24 Ultra (512 GB) - Negro Titanio", "category_id": 1, "seller_id": "TSamsung", "brand": "Samsung",
+    "description": "Descubre el poder de la IA en tus manos con Galaxy AI. Un smartphone diseñado para revolucionar la forma en que creas, te conectas y te comunicas.",
+    "price": { "amount": 5599900, "currency": "COP" }, "stock": 45, "sku": "SAM-S24U-512-BLK",
+    "accepted_payment_method_ids": [1, 2, 3, 10], "images": ["/images/products/SMA002/1.jpg"],
+    "specifications": { "model": "Galaxy S24 Ultra", "color": "Negro Titanio", "ram": "12 GB", "storage": "512 GB", "screen_size": 6.8, "main_camera_resolution": "200 MP", "operating_system": "Android" }
+  },
+  {
+    "id": "SMA003", "title": "Motorola Edge 40 Neo (256 GB) - Azul", "category_id": 1, "seller_id": "VEND001", "brand": "Motorola",
+    "description": "Diseño elegante y ultraligero con acabado en cuero vegano. Su pantalla pOLED de 144 Hz te ofrece una experiencia visual cinematográfica y fluida.",
+    "price": { "amount": 2199900, "currency": "COP" }, "stock": 15, "sku": "MOT-E40N-256-BLU",
+    "accepted_payment_method_ids": [1, 2, 10], "images": ["/images/products/SMA003/1.jpg"],
+    "specifications": { "model": "Edge 40 Neo", "color": "Soothing Sea Blue", "ram": "8 GB", "storage": "256 GB", "screen_size": 6.55, "main_camera_resolution": "50 MP", "operating_system": "Android" }
+  },
+  {
+    "id": "SMA004", "title": "Apple iPhone 14 (128 GB) - Morado", "category_id": 1, "seller_id": "VEND001", "brand": "Apple",
+    "description": "Con el sistema de dos cámaras más avanzado, un rendimiento increíble gracias al chip A15 Bionic y un gran salto en duración de batería.",
+    "price": { "amount": 3599900, "currency": "COP" }, "stock": 25, "sku": "APL-14-128-PUR",
+    "accepted_payment_method_ids": [1, 2, 10], "images": ["/images/products/SMA004/1.jpg"],
+    "specifications": { "model": "iPhone 14", "color": "Morado", "ram": "6 GB", "storage": "128 GB", "screen_size": 6.1, "main_camera_resolution": "12 MP", "operating_system": "iOS" }
+  },
+  {
+    "id": "SMA005", "title": "Samsung Galaxy A54 5G (128 GB) - Verde Lima", "category_id": 1, "seller_id": "TSamsung", "brand": "Samsung",
+    "description": "Un diseño minimalista y elegante, cámara OIS para fotos y videos nítidos, y una increíble pantalla Super AMOLED para disfrutar tu contenido al máximo.",
+    "price": { "amount": 1799900, "currency": "COP" }, "stock": 60, "sku": "SAM-A54-128-GRN",
+    "accepted_payment_method_ids": [1, 2, 3, 10], "images": ["/images/products/SMA005/1.jpg"],
+    "specifications": { "model": "Galaxy A54", "color": "Verde Lima", "ram": "8 GB", "storage": "128 GB", "screen_size": 6.4, "main_camera_resolution": "50 MP", "operating_system": "Android" }
+  },
+  {
+    "id": "SMA006", "title": "Motorola G84 (256GB) - Magenta", "category_id": 1, "seller_id": "VEND001", "brand": "Motorola",
+    "description": "Sumérgete en el entretenimiento con su pantalla pOLED cinematográfica y audio multidimensional. Captura fotos nítidas con el sistema de cámara de 50 MP.",
+    "price": { "amount": 1399900, "currency": "COP" }, "stock": 35, "sku": "MOT-G84-256-MAG",
+    "accepted_payment_method_ids": [1, 2, 10], "images": ["/images/products/SMA006/1.jpg"],
+    "specifications": { "model": "G84", "color": "Viva Magenta", "ram": "8 GB", "storage": "256 GB", "screen_size": 6.5, "main_camera_resolution": "50 MP", "operating_system": "Android" }
+  },
+  {
+    "id": "SMA007", "title": "Apple iPhone SE (2022) (64 GB) - Rojo", "category_id": 1, "seller_id": "TApple", "brand": "Apple",
+    "description": "El potente chip A15 Bionic en un diseño icónico y compacto. Con una batería de gran duración y una cámara estelar, es todo lo que esperas y más.",
+    "price": { "amount": 1899900, "currency": "COP" }, "stock": 50, "sku": "APL-SE3-64-RED",
+    "accepted_payment_method_ids": [1, 2, 3, 10], "images": ["/images/products/SMA007/1.jpg"],
+    "specifications": { "model": "iPhone SE (3rd generation)", "color": "(PRODUCT)RED", "ram": "4 GB", "storage": "64 GB", "screen_size": 4.7, "main_camera_resolution": "12 MP", "operating_system": "iOS" }
+  },
+  {
+    "id": "SMA008", "title": "Samsung Galaxy Z Fold 5 (512 GB) - Azul claro", "category_id": 1, "seller_id": "TSamsung", "brand": "Samsung",
+    "description": "La experiencia de una pantalla grande que cabe en tu bolsillo. Más delgado, más ligero y más potente. La multitarea nunca fue tan fácil.",
+    "price": { "amount": 7199900, "currency": "COP" }, "stock": 10, "sku": "SAM-ZF5-512-BLU",
+    "accepted_payment_method_ids": [1, 2, 3, 10], "images": ["/images/products/SMA008/1.jpg"],
+    "specifications": { "model": "Galaxy Z Fold 5", "color": "Azul claro", "ram": "12 GB", "storage": "512 GB", "screen_size": 7.6, "main_camera_resolution": "50 MP", "operating_system": "Android" }
+  },
+  {
+    "id": "MUE001", "title": "Escritorio Gamer Maderkit con LED", "category_id": 2, "seller_id": "VEND002", "brand": "Maderkit",
+    "description": "Optimiza tu espacio de juego con este escritorio ergonómico. Incluye sistema de luces LED RGB para una inmersión total y superficie de alta resistencia.",
+    "price": { "amount": 999900, "currency": "COP" }, "stock": 20, "sku": "MKT-ESK-GAMER-LED",
+    "accepted_payment_method_ids": [1, 2, 10], "images": ["/images/products/MUE001/1.jpg"],
+    "specifications": { "material": "Aglomerado", "dimensions": { "height": "75 cm", "width": "150 cm", "depth": "60 cm" }, "color": "Negro/Rojo", "style": "Moderno", "requires_assembly": true }
+  },
+  {
+    "id": "MUE002", "title": "Biblioteca Madesa con 5 Estantes - Blanco", "category_id": 2, "seller_id": "VEND002", "brand": "Madesa",
+    "description": "Organiza tus libros y objetos decorativos con estilo. Esta biblioteca de diseño minimalista se adapta a cualquier espacio de tu hogar u oficina.",
+    "price": { "amount": 599900, "currency": "COP" }, "stock": 30, "sku": "MDS-BIB-5EST-WHT",
+    "accepted_payment_method_ids": [1, 2, 10], "images": ["/images/products/MUE002/1.jpg"],
+    "specifications": { "material": "MDP", "dimensions": { "height": "180 cm", "width": "80 cm", "depth": "30 cm" }, "color": "Blanco", "style": "Minimalista", "requires_assembly": true }
+  },
+  {
+    "id": "MUE003", "title": "Mesa de Centro Maderkit - Wengue", "category_id": 2, "seller_id": "VEND002", "brand": "Maderkit",
+    "description": "Un toque de elegancia y funcionalidad para tu sala. Diseño contemporáneo y fabricada con materiales de alta calidad para una mayor durabilidad.",
+    "price": { "amount": 359900, "currency": "COP" }, "stock": 25, "sku": "MKT-MC-WENG",
+    "accepted_payment_method_ids": [1, 2, 10], "images": ["/images/products/MUE003/1.jpg"],
+    "specifications": { "material": "Aglomerado", "dimensions": { "height": "40 cm", "width": "90 cm", "depth": "50 cm" }, "color": "Wengue", "style": "Contemporáneo", "requires_assembly": true }
+  },
+  {
+    "id": "MUE004", "title": "Armario Madesa de 2 Puertas Corredizas", "category_id": 2, "seller_id": "VEND002", "brand": "Madesa",
+    "description": "Solución de almacenamiento espaciosa y moderna. Sus puertas corredizas optimizan el espacio y su interior está diseñado para una organización eficiente.",
+    "price": { "amount": 1399900, "currency": "COP" }, "stock": 10, "sku": "MDS-ARM-2PCR-BRN",
+    "accepted_payment_method_ids": [1, 2, 10], "images": ["/images/products/MUE004/1.jpg"],
+    "specifications": { "material": "MDP", "dimensions": { "height": "210 cm", "width": "180 cm", "depth": "55 cm" }, "color": "Marrón Rústico", "style": "Rústico", "requires_assembly": true }
+  },
+  {
+    "id": "MUE005", "title": "Centro de Entretenimiento Maderkit para TV 65 pulgadas", "category_id": 2, "seller_id": "VEND002", "brand": "Maderkit",
+    "description": "El mueble perfecto para tu centro de entretenimiento. Con espacio para televisores de hasta 65 pulgadas y compartimentos para tus dispositivos electrónicos.",
+    "price": { "amount": 1100000, "currency": "COP" }, "stock": 15, "sku": "MKT-CENTV-65",
+    "accepted_payment_method_ids": [1, 2, 10], "images": ["/images/products/MUE005/1.jpg"],
+    "specifications": { "material": "Aglomerado", "dimensions": { "height": "160 cm", "width": "180 cm", "depth": "40 cm" }, "color": "Nogal", "style": "Moderno", "requires_assembly": true }
+  },
+  {
+    "id": "MUE006", "title": "Silla de Oficina Ergonómica Malla", "category_id": 2, "seller_id": "VEND003", "brand": "Genérico",
+    "description": "Diseñada para tu comodidad durante largas jornadas de trabajo. Espaldar en malla transpirable y soporte lumbar para una postura correcta.",
+    "price": { "amount": 480000, "currency": "COP" }, "stock": 5, "sku": "GEN-SIL-ERG-BLK",
+    "accepted_payment_method_ids": [10], "images": ["/images/products/MUE006/1.jpg"],
+    "specifications": { "material": "Malla y Metal", "dimensions": { "height": "110 cm", "width": "60 cm", "depth": "60 cm" }, "color": "Negro", "style": "Oficina", "requires_assembly": true }
+  },
+  {
+    "id": "PAP001", "title": "Cuaderno Norma Cosido 100 Hojas Cuadriculado", "category_id": 3, "seller_id": "TNorma", "brand": "Norma",
+    "description": "El compañero ideal para tus estudios. Tapa resistente, hojas de alta calidad y un cosido duradero que garantiza que tus notas estén siempre seguras.",
+    "price": { "amount": 11900, "currency": "COP" }, "stock": 200, "sku": "NOR-CUA-100H-CUAD",
+    "accepted_payment_method_ids": [1, 2, 3, 10], "images": ["/images/products/PAP001/1.jpg"],
+    "specifications": { "item_type": "Cuaderno", "units_per_package": 1, "size": "Estándar", "page_count": 100, "paper_type": "Cuadriculado" }
+  },
+  {
+    "id": "PAP002", "title": "Resma de Papel Scribe Carta 75g Paquete x500 Hojas", "category_id": 3, "seller_id": "VEND001", "brand": "Scribe",
+    "description": "Papel multi-propósito de alta blancura, ideal para impresiones y fotocopias de calidad profesional. Ecológico y de excelente desempeño.",
+    "price": { "amount": 19900, "currency": "COP" }, "stock": 150, "sku": "SCR-RES-500H-75G",
+    "accepted_payment_method_ids": [1, 2, 10], "images": ["/images/products/PAP002/1.jpg"],
+    "specifications": { "item_type": "Resma de Papel", "units_per_package": 500, "size": "Carta", "page_count": 500, "paper_type": "Bond" }
+  },
+  {
+    "id": "PAP003", "title": "Caja de Bolígrafos Offi-Esco Tinta Negra x12", "category_id": 3, "seller_id": "VEND003", "brand": "Offi-Esco",
+    "description": "Caja con 12 bolígrafos de tinta negra de secado rápido. Punta media para una escritura suave y continua. Ideal para la oficina o el estudio.",
+    "price": { "amount": 15900, "currency": "COP" }, "stock": 80, "sku": "OFE-BOL-NEG-x12",
+    "accepted_payment_method_ids": [10], "images": ["/images/products/PAP003/1.jpg"],
+    "specifications": { "item_type": "Bolígrafo", "units_per_package": 12, "ink_color": "Negro", "tip_size": "1.0 mm" }
+  },
+  {
+    "id": "PAP004", "title": "Cuaderno Argollado Scribe Tapa Dura 80 Hojas Rayado", "category_id": 3, "seller_id": "VEND001", "brand": "Scribe",
+    "description": "Tapa dura para mayor protección, argollado doble metálico resistente y hojas rayadas de alta calidad. Perfecto para tomar apuntes con estilo.",
+    "price": { "amount": 15900, "currency": "COP" }, "stock": 120, "sku": "SCR-CUA-ARG-80H-RAY",
+    "accepted_payment_method_ids": [1, 2, 10], "images": ["/images/products/PAP004/1.jpeg"],
+    "specifications": { "item_type": "Cuaderno", "units_per_package": 1, "size": "Estándar", "page_count": 80, "paper_type": "Rayado" }
+  },
+  {
+    "id": "PAP005", "title": "Caja de Colores Norma x24 Unidades", "category_id": 3, "seller_id": "TNorma", "brand": "Norma",
+    "description": "Dale vida a tus creaciones con estos 24 colores vibrantes. Minas resistentes que no se quiebran fácilmente y madera de alta calidad.",
+    "price": { "amount": 31900, "currency": "COP" }, "stock": 90, "sku": "NOR-COL-x24",
+    "accepted_payment_method_ids": [1, 2, 3, 10], "images": ["/images/products/PAP005/1.jpg"],
+    "specifications": { "item_type": "Colores", "units_per_package": 24 }
+  },
+  {
+    "id": "PAP006", "title": "Tajalápiz con Depósito Offi-Esco", "category_id": 3, "seller_id": "VEND003", "brand": "Offi-Esco",
+    "description": "Práctico y funcional. Saca punta perfecta sin hacer desorden gracias a su depósito de gran capacidad. Cuchilla de acero de alta duración.",
+    "price": { "amount": 3900, "currency": "COP" }, "stock": 300, "sku": "OFE-TAJA-DEP",
+    "accepted_payment_method_ids": [10], "images": ["/images/products/PAP006/1.jpg"],
+    "specifications": { "item_type": "Tajalápiz", "units_per_package": 1 }
+  }
+]

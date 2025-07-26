@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: meli-backend-api
+    ports:
+      - "8000:8000"
+    volumes:
+      # Monta el código para desarrollo en vivo
+      - ./backend:/code
+
+  frontend:
+    build: ./frontend
+    container_name: meli-frontend-web
+    ports:
+      # Exponemos el frontend en el puerto 8080 para no chocar con el backend
+      - "8080:8080"
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      # Le decimos a Docker que el frontend necesita que el backend esté listo
+      - backend

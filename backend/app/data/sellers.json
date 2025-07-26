@@ -1,0 +1,56 @@
+[
+  {
+    "id": "TSamsung",
+    "name": "Tienda Oficial Samsung",
+    "is_official_store": true,
+    "reputation": {
+      "level": "Verde",
+      "score": 4.9
+    }
+  },
+  {
+    "id": "TApple",
+    "name": "Tienda Oficial Apple",
+    "is_official_store": true,
+    "reputation": {
+      "level": "Verde",
+      "score": 5.0
+    }
+  },
+  {
+    "id": "TNorma",
+    "name": "Tienda Oficial Norma",
+    "is_official_store": true,
+    "reputation": {
+      "level": "Verde",
+      "score": 4.8
+    }
+  },
+  {
+    "id": "VEND001",
+    "name": "CyberPlanet",
+    "is_official_store": false,
+    "reputation": {
+      "level": "Verde",
+      "score": 4.7
+    }
+  },
+  {
+    "id": "VEND002",
+    "name": "Hogar y Estilo",
+    "is_official_store": false,
+    "reputation": {
+      "level": "Amarillo",
+      "score": 3.9
+    }
+  },
+  {
+    "id": "VEND003",
+    "name": "Ofertas Express",
+    "is_official_store": false,
+    "reputation": {
+      "level": "Rojo",
+      "score": 2.5
+    }
+  }
+]
